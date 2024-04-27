@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Setup') {
             steps {
-                dir ('eks') {
+                dir('eks') {
                     deleteDir()
             }
             }
@@ -16,7 +16,7 @@ pipeline {
         stage('Checkout SCM'){
             steps{
                 script{
-                    checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/cristhiancaldas/ec2-terraform.git']])
+                    checkout scmGit(branches: [[name: '*/feature/eks-terraform']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/cristhiancaldas/ec2-terraform.git']])
                 }
             }
         }
