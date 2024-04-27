@@ -6,6 +6,13 @@ pipeline {
         AWS_DEFAULT_REGION = "us-east-1"
     }
     stages {
+        stage('Setup') {
+            steps {
+                dir ('eks') {
+                    deleteDir()
+            }
+            }
+        }
         stage('Checkout SCM'){
             steps{
                 script{
@@ -34,7 +41,7 @@ pipeline {
         stage('Validating Terraform'){
             steps{
                 script{
-                    dir('EKS'){
+                    dir('eks'){
                         sh 'terraform validate'
                     }
                 }
@@ -50,7 +57,7 @@ pipeline {
                 }
             }
         }
-        
+
         /*stage('Creating/Destroying an EKS Cluster'){
             steps{
                 script{
