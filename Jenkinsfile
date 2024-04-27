@@ -40,7 +40,7 @@ pipeline {
                 }
             }
         }
-        /*stage('Previewing the Infra using Terraform'){
+        stage('Previewing the Infra using Terraform'){
             steps{
                 script{
                     dir('eks'){
@@ -49,7 +49,7 @@ pipeline {
                     input(message: "Are you sure to proceed?", ok: "Proceed")
                 }
             }
-        }*/
+        }
         /*stage('Creating/Destroying an EKS Cluster'){
             steps{
                 script{
