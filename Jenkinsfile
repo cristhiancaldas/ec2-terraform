@@ -58,7 +58,7 @@ pipeline {
             }
         }
 
-        /*stage('Creating/Destroying an EKS Cluster'){
+        stage('Creating/Destroying an EKS Cluster'){
             steps{
                 script{
                     dir('eks') {
@@ -66,17 +66,18 @@ pipeline {
                     }
                 }
             }
-        }*/
-        /*stage('Deploying Nginx Application') {
+        }
+        
+        stage('Deploying Nginx Application') {
             steps{
                 script{
-                    dir('eks/ConfigurationFiles') {
+                    dir('eks/configurationFiles') {
                         sh 'aws eks update-kubeconfig --name my-eks-cluster'
                         sh 'kubectl apply -f deployment.yaml'
                         sh 'kubectl apply -f service.yaml'
                     }
                 }
             }
-        }*/
+        }
     }
 }
