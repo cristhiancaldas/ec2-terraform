@@ -68,7 +68,7 @@ pipeline {
             }
         }
         
-        stage('Deploying Nginx Application') {
+       /* stage('Deploying Nginx Application') {
             steps{
                 script{
                     dir('eks/configurationFiles') {
@@ -78,6 +78,6 @@ pipeline {
                     }
                 }
             }
-        }
+        }*/
     }
 }
